@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Viewer harness</title>
+<link rel="stylesheet" href="../src/viewer.css">
+<script src="../src/viewer.js"></script>
+<script src="../src/content.js"></script>
+</head>
+<body>
+<pre id="payload">loading…</pre>
+<script>
+  // 同步取一份 JSON 塞进 <pre>，模拟 Chrome 内置 JSON 页面的 DOM 结构；
+  // URL 带 #__jv_force 时 content.js 会跳过 Content-Type 检查（测试钩子）。
+  (function () {
+    var which = location.search.indexOf('big') !== -1 ? 'big.json' : 'sample.json';
+    var x = new XMLHttpRequest();
+    x.open('GET', which, false);
+    x.send(null);
+    document.getElementById('payload').textContent = x.responseText;
+  })();
+</script>
+</body>
+</html>

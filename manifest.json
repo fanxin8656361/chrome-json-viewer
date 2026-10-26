@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "JSON 美化查看器（Firefox 风格）",
+  "version": "1.0.0",
+  "description": "像 Firefox 一样查看 JSON：可折叠树、语法高亮、搜索高亮、路径显示与一键复制。自动接管 application/json 页面，替代 Chrome 自带的“美观输出”。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "JSON 美化：已美化时点击切换 树形/原始 视图；未美化时点击强制美化",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "js": ["src/viewer.js", "src/content.js"],
+      "css": ["src/viewer.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

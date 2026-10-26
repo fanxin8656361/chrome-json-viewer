@@ -1,0 +1,56 @@
+[
+  {
+    "name": "美克（线上环境）",
+    "extAppId": "wx***********",
+    "umaAppKey": "6Od***************",
+    "domain": "api.meike.com",
+    "beid": 1,
+    "appid": "wx***************",
+    "enabled": true,
+    "quota": null,
+    "rateLimit": 3.75,
+    "tags": ["prod", "v2"],
+    "config": {
+      "timeout": 30,
+      "retries": 3,
+      "debug": false,
+      "whitelist": ["10.0.0.1", "10.0.0.2"]
+    }
+  },
+  {
+    "name": "安克（测试环境）",
+   "extAppId": "wx***********",
+    "umaAppKey": "6Od***************",
+    "domain": "api.meike.com",
+    "beid": 1,
+    "appid": "wx***************",
+    "enabled": false,
+    "quota": 1000,
+    "rateLimit": 100.5,
+    "tags": [],
+    "config": {}
+  },
+  {
+    "name": "奥拓（私有部署）",
+    "extAppId": "wx*************",
+    "umaAppKey": "606b***************",
+    "domain": "api.meike.com",
+    "beid": 1142,
+    "appid": "wx***************",
+    "deep": { "a": { "b": { "c": { "d": [1, 2, 3, { "x": null, "y": [true, false] }] } } } },
+    "longText": "这是一段很长的说明文字：JSON 查看器应当正确显示中文与 emoji 🎉🚀，并保留引号 \" 与反斜杠 \\ 等转义字符。The quick brown fox jumps over the lazy dog. 0123456789."
+  },
+  {
+    "name": "优居市场（测试环境）",
+    "extAppId": "wx*********************",
+    "umaAppKey": "6296*******************",
+    "domain": "api.meike.net",
+    "nat_domain": "api.meike.com",
+    "beid": 7,
+    "appid": "wx****************",
+    "empty": "",
+    "negative": -42,
+    "float": -0.5,
+    "bigNumber": 9007199254740991
+  }
+]
